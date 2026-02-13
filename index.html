@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.3">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!doctype html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Mini Pong&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color-scheme: dark;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>place-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: radial-gradient(circle at top, #1f2937, #020617 60%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-family: Arial, Helvetica, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.game-shell {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>color: #e2e8f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>letter-spacing: 0.08em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>p {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin: 0.25rem 0 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>opacity: 0.9;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>canvas {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>background: #0b1120;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border: 2px solid #94a3b8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>box-shadow: 0 0 20px rgba(148, 163, 184, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>max-width: 95vw;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hint {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>margin-top: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>opacity: 0.8;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="game-shell"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Mini Pong&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p id="scoreboard"&gt;0 : 0&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="game" width="800" height="450" aria-label="Pong game board"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hint"&gt;Left: W/S &amp;nbsp;|&amp;nbsp; Right: ↑/↓ &amp;nbsp;|&amp;nbsp; Space: restart&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const canvas = document.getElementById('game');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const ctx = canvas.getContext('2d');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const scoreboard = document.getElementById('scoreboard');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const paddleWidth = 14;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const paddleHeight = 95;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const paddleSpeed = 7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const ballRadius = 10;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const leftPaddle = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>x: 28,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>y: canvas.height / 2 - paddleHeight / 2,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>score: 0,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>up: 'KeyW',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>down: 'KeyS'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const rightPaddle = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>x: canvas.width - 28 - paddleWidth,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>y: canvas.height / 2 - paddleHeight / 2,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>score: 0,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>up: 'ArrowUp',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>down: 'ArrowDown'</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const ball = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>x: canvas.width / 2,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>y: canvas.height / 2,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>vx: 5,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>vy: 3</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const pressed = new Set();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function resetBall(direction = 1) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ball.x = canvas.width / 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ball.y = canvas.height / 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const horizontal = 4 + Math.random() * 2;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const vertical = (Math.random() * 4 - 2) || 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ball.vx = horizontal * direction;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ball.vy = vertical;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function clampPaddle(paddle) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>paddle.y = Math.max(0, Math.min(canvas.height - paddleHeight, paddle.y));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function updatePaddles() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(leftPaddle.up)) leftPaddle.y -= paddleSpeed;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(leftPaddle.down)) leftPaddle.y += paddleSpeed;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(rightPaddle.up)) rightPaddle.y -= paddleSpeed;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(rightPaddle.down)) rightPaddle.y += paddleSpeed;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>clampPaddle(leftPaddle);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>clampPaddle(rightPaddle);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function ballHitsPaddle(paddle) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return (</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.x - ballRadius &lt; paddle.x + paddleWidth &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.x + ballRadius &gt; paddle.x &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.y + ballRadius &gt; paddle.y &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.y - ballRadius &lt; paddle.y + paddleHeight</p>
+<p class="p1"><span class="Apple-converted-space">        </span>);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function updateBall() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ball.x += ball.vx;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ball.y += ball.vy;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (ball.y - ballRadius &lt;= 0 || ball.y + ballRadius &gt;= canvas.height) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.vy *= -1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (ballHitsPaddle(leftPaddle) &amp;&amp; ball.vx &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.x = leftPaddle.x + paddleWidth + ballRadius;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.vx *= -1.05;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.vy += (ball.y - (leftPaddle.y + paddleHeight / 2)) * 0.04;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (ballHitsPaddle(rightPaddle) &amp;&amp; ball.vx &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.x = rightPaddle.x - ballRadius;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.vx *= -1.05;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ball.vy += (ball.y - (rightPaddle.y + paddleHeight / 2)) * 0.04;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (ball.x + ballRadius &lt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rightPaddle.score += 1;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>resetBall(-1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (ball.x - ballRadius &gt; canvas.width) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>leftPaddle.score += 1;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>resetBall(1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function drawNet() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = '#334155';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dashHeight = 18;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>for (let y = 0; y &lt; canvas.height; y += dashHeight * 2) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>ctx.fillRect(canvas.width / 2 - 2, y, 4, dashHeight);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function drawPaddle(paddle) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = '#f8fafc';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillRect(paddle.x, paddle.y, paddleWidth, paddleHeight);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function drawBall() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = '#38bdf8';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.beginPath();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.fill();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function render() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>ctx.clearRect(0, 0, canvas.width, canvas.height);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawNet();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawPaddle(leftPaddle);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawPaddle(rightPaddle);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>drawBall();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>scoreboard.textContent = `${leftPaddle.score} : ${rightPaddle.score}`;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>function gameLoop() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updatePaddles();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>updateBall();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>render();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>requestAnimationFrame(gameLoop);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.addEventListener('keydown', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pressed.add(event.code);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (event.code === 'Space') {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>leftPaddle.score = 0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>rightPaddle.score = 0;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>resetBall(Math.random() &lt; 0.5 ? -1 : 1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>window.addEventListener('keyup', (event) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pressed.delete(event.code);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>resetBall(Math.random() &lt; 0.5 ? -1 : 1);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gameLoop();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
