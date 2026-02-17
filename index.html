@@ -1,226 +1,147 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean Martin — Commercial Director</title>
+  <meta name="description" content="Sean Martin is a commercial director working across live action and animation for the world's most ambitious brands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Abril+Fatface&&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Mini Pong&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>color-scheme: dark;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>min-height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>place-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>background: radial-gradient(circle at top, #1f2937, #020617 60%);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>font-family: Arial, Helvetica, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>.game-shell {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>color: #e2e8f0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>h1 {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>margin-bottom: 0.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>letter-spacing: 0.08em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>p {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>margin: 0.25rem 0 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>opacity: 0.9;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>canvas {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>background: #0b1120;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>border: 2px solid #94a3b8;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>box-shadow: 0 0 20px rgba(148, 163, 184, 0.2);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>max-width: 95vw;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>.hint {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>margin-top: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>opacity: 0.8;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="game-shell"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Mini Pong&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p id="scoreboard"&gt;0 : 0&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;canvas id="game" width="800" height="450" aria-label="Pong game board"&gt;&lt;/canvas&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="hint"&gt;Left: W/S &amp;nbsp;|&amp;nbsp; Right: ↑/↓ &amp;nbsp;|&amp;nbsp; Space: restart&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const canvas = document.getElementById('game');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const ctx = canvas.getContext('2d');</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const scoreboard = document.getElementById('scoreboard');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const paddleWidth = 14;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const paddleHeight = 95;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const paddleSpeed = 7;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>const ballRadius = 10;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const leftPaddle = {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>x: 28,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>y: canvas.height / 2 - paddleHeight / 2,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>score: 0,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>up: 'KeyW',</p>
-<p class="p1"><span class="Apple-converted-space">        </span>down: 'KeyS'</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const rightPaddle = {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>x: canvas.width - 28 - paddleWidth,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>y: canvas.height / 2 - paddleHeight / 2,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>score: 0,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>up: 'ArrowUp',</p>
-<p class="p1"><span class="Apple-converted-space">        </span>down: 'ArrowDown'</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const ball = {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>x: canvas.width / 2,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>y: canvas.height / 2,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>vx: 5,</p>
-<p class="p1"><span class="Apple-converted-space">        </span>vy: 3</p>
-<p class="p1"><span class="Apple-converted-space">      </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>const pressed = new Set();</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function resetBall(direction = 1) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ball.x = canvas.width / 2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ball.y = canvas.height / 2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const horizontal = 4 + Math.random() * 2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const vertical = (Math.random() * 4 - 2) || 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ball.vx = horizontal * direction;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ball.vy = vertical;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function clampPaddle(paddle) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>paddle.y = Math.max(0, Math.min(canvas.height - paddleHeight, paddle.y));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function updatePaddles() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(leftPaddle.up)) leftPaddle.y -= paddleSpeed;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(leftPaddle.down)) leftPaddle.y += paddleSpeed;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(rightPaddle.up)) rightPaddle.y -= paddleSpeed;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (pressed.has(rightPaddle.down)) rightPaddle.y += paddleSpeed;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>clampPaddle(leftPaddle);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>clampPaddle(rightPaddle);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function ballHitsPaddle(paddle) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>return (</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.x - ballRadius &lt; paddle.x + paddleWidth &amp;&amp;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.x + ballRadius &gt; paddle.x &amp;&amp;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.y + ballRadius &gt; paddle.y &amp;&amp;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.y - ballRadius &lt; paddle.y + paddleHeight</p>
-<p class="p1"><span class="Apple-converted-space">        </span>);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function updateBall() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ball.x += ball.vx;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ball.y += ball.vy;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (ball.y - ballRadius &lt;= 0 || ball.y + ballRadius &gt;= canvas.height) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.vy *= -1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (ballHitsPaddle(leftPaddle) &amp;&amp; ball.vx &lt; 0) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.x = leftPaddle.x + paddleWidth + ballRadius;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.vx *= -1.05;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.vy += (ball.y - (leftPaddle.y + paddleHeight / 2)) * 0.04;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (ballHitsPaddle(rightPaddle) &amp;&amp; ball.vx &gt; 0) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.x = rightPaddle.x - ballRadius;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.vx *= -1.05;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ball.vy += (ball.y - (rightPaddle.y + paddleHeight / 2)) * 0.04;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (ball.x + ballRadius &lt; 0) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>rightPaddle.score += 1;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>resetBall(-1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (ball.x - ballRadius &gt; canvas.width) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>leftPaddle.score += 1;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>resetBall(1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function drawNet() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = '#334155';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>const dashHeight = 18;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>for (let y = 0; y &lt; canvas.height; y += dashHeight * 2) {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>ctx.fillRect(canvas.width / 2 - 2, y, 4, dashHeight);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function drawPaddle(paddle) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = '#f8fafc';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillRect(paddle.x, paddle.y, paddleWidth, paddleHeight);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function drawBall() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.fillStyle = '#38bdf8';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.beginPath();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI * 2);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.fill();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function render() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>ctx.clearRect(0, 0, canvas.width, canvas.height);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>drawNet();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>drawPaddle(leftPaddle);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>drawPaddle(rightPaddle);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>drawBall();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>scoreboard.textContent = `${leftPaddle.score} : ${rightPaddle.score}`;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>function gameLoop() {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>updatePaddles();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>updateBall();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>render();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>requestAnimationFrame(gameLoop);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.addEventListener('keydown', (event) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>pressed.add(event.code);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>if (event.code === 'Space') {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>leftPaddle.score = 0;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>rightPaddle.score = 0;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>resetBall(Math.random() &lt; 0.5 ? -1 : 1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>window.addEventListener('keyup', (event) =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>pressed.delete(event.code);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>});</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>resetBall(Math.random() &lt; 0.5 ? -1 : 1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gameLoop();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">Sean Martin</a></div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg-text">Director</div>
+    <div class="hero-bleed-title"></div>
+
+    <div class="hero-featured">
+      <div class="hero-media">
+        <a href="#" class="hero-cta-wrap">
+          <img src="https://vumbnail.com/307365841.jpg" alt="Featured Project">
+        </a>
+      </div>
+      <div class="hero-content">
+        <div class="hero-tag"><span>Featured</span> — Latest Work</div>
+        <h1 class="hero-title"></h1>
+        <p class="hero-client"></p>
+        <a href="#" class="hero-cta">
+          View Project <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-text">Commercial Director <span class="filled">—</span></span>
+      <span class="marquee-text">Live Action <span class="filled">&</span> Animation <span class="filled">—</span></span>
+      <span class="marquee-text">Commercial Director <span class="filled">—</span></span>
+      <span class="marquee-text">Live Action <span class="filled">&</span> Animation <span class="filled">—</span></span>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <section class="projects" id="work">
+    <div class="section-header">
+      <h2 class="section-title">Selected <span class="outline">Work</span></h2>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all"><span>All</span></button>
+        <button class="filter-btn" data-filter="live-action"><span>Live Action</span></button>
+        <button class="filter-btn" data-filter="animation"><span>Animation</span></button>
+      </div>
+    </div>
+
+    <div class="gradient-line"></div>
+
+    <div class="projects-grid" style="margin-top: 60px;">
+      <!-- Cards injected by JS -->
+    </div>
+  </section>
+
+  <!-- Bio -->
+  <section class="bio" id="about">
+    <div class="bio-inner">
+      <div>
+        <div class="bio-label reveal">About</div>
+        <h2 class="bio-heading reveal reveal-delay-1">
+          Stories that<br><span class="gradient-word">move.</span>
+        </h2>
+        <p class="bio-text reveal reveal-delay-2">
+          <strong>Sean Martin</strong> is a commercial director working at the intersection of live action and animation. With a decade of experience crafting visual narratives for the world's most ambitious brands, his work is defined by bold composition, precise pacing, and an obsession with the details that make people feel something. Based in Los Angeles. Represented globally.
+        </p>
+      </div>
+      <div class="bio-stats reveal reveal-delay-3">
+        <div class="stat">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Global Brands</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Awards</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer class="footer" id="contact">
+    <div class="gradient-line" style="margin-bottom: 60px;"></div>
+    <div class="footer-inner">
+      <a href="mailto:hello@seanmartin.com" class="footer-cta">
+        Let's <span class="gradient-word">talk.</span>
+      </a>
+      <div class="footer-links">
+        <a href="#">Vimeo</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Sean Martin. All rights reserved.</span>
+      <span>Commercial Director — LA</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
