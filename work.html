@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work — Sean Martin</title>
+  <meta name="description" content="Selected work by Sean Martin — Commercial Director">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="loader-line"></div>
+    </div>
+  </div>
+
+  <!-- Noise Overlay -->
+  <div class="noise"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo"><a href="index.html">Sean Martin</a></div>
+    <ul class="nav-links">
+      <li><a href="work.html" class="is-current">Work</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Work Gallery -->
+  <main class="work-page">
+    <div class="work-header">
+      <h1 class="work-title">Selected Work</h1>
+      <div class="work-filters" id="workFilters">
+        <button class="work-filter active" data-filter="all">All</button>
+        <button class="work-filter" data-filter="live-action">Live Action</button>
+        <button class="work-filter" data-filter="animation">Animation</button>
+      </div>
+    </div>
+    <div class="work-gallery" id="workGallery">
+      <!-- Injected by JS -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="mailto:hello@seanmartin.com" class="footer-cta">
+        Let's <span class="gradient-word">talk.</span>
+      </a>
+      <div class="footer-links">
+        <a href="#">Vimeo</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 Sean Martin. All rights reserved.</span>
+      <span>Commercial Director — LA</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

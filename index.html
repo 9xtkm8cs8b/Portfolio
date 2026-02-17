@@ -7,7 +7,7 @@
   <meta name="description" content="Sean Martin is a commercial director working across live action and animation for the world's most ambitious brands.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Abril+Fatface&&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,74 +19,25 @@
     </div>
   </div>
 
+  <!-- Video Backgrounds (injected by JS) -->
+  <div class="video-layer" id="videoLayer"></div>
+
   <!-- Noise Overlay -->
   <div class="noise"></div>
-
-  <!-- Custom Cursor -->
-  <div class="cursor"></div>
 
   <!-- Navigation -->
   <nav class="nav">
     <div class="nav-logo"><a href="index.html">Sean Martin</a></div>
     <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
+      <li><a href="work.html">Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg-text">Director</div>
-    <div class="hero-bleed-title"></div>
-
-    <div class="hero-featured">
-      <div class="hero-media">
-        <a href="#" class="hero-cta-wrap">
-          <img src="https://vumbnail.com/307365841.jpg" alt="Featured Project">
-        </a>
-      </div>
-      <div class="hero-content">
-        <div class="hero-tag"><span>Featured</span> — Latest Work</div>
-        <h1 class="hero-title"></h1>
-        <p class="hero-client"></p>
-        <a href="#" class="hero-cta">
-          View Project <span class="arrow">→</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="scroll-indicator">
-      <div class="scroll-line"></div>
-      Scroll
-    </div>
-  </section>
-
-  <!-- Marquee -->
-  <div class="marquee-section">
-    <div class="marquee-track">
-      <span class="marquee-text">Commercial Director <span class="filled">—</span></span>
-      <span class="marquee-text">Live Action <span class="filled">&</span> Animation <span class="filled">—</span></span>
-      <span class="marquee-text">Commercial Director <span class="filled">—</span></span>
-      <span class="marquee-text">Live Action <span class="filled">&</span> Animation <span class="filled">—</span></span>
-    </div>
-  </div>
-
-  <!-- Projects -->
-  <section class="projects" id="work">
-    <div class="section-header">
-      <h2 class="section-title">Selected <span class="outline">Work</span></h2>
-      <div class="filters">
-        <button class="filter-btn active" data-filter="all"><span>All</span></button>
-        <button class="filter-btn" data-filter="live-action"><span>Live Action</span></button>
-        <button class="filter-btn" data-filter="animation"><span>Animation</span></button>
-      </div>
-    </div>
-
-    <div class="gradient-line"></div>
-
-    <div class="projects-grid" style="margin-top: 60px;">
-      <!-- Cards injected by JS -->
+  <!-- Hero: Client Name List -->
+  <section class="hero-clients" id="work">
+    <div class="clients-list" id="clientsList">
+      <!-- Injected by JS -->
     </div>
   </section>
 
@@ -123,9 +74,8 @@
     </div>
   </section>
 
-  <!-- Footer / Contact -->
-  <footer class="footer" id="contact">
-    <div class="gradient-line" style="margin-bottom: 60px;"></div>
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-inner">
       <a href="mailto:hello@seanmartin.com" class="footer-cta">
         Let's <span class="gradient-word">talk.</span>
